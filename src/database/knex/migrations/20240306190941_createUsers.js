@@ -4,7 +4,7 @@ exports.up = function(knex) {
         table.string('name').notNullable();
         table.string('email').notNullable();
         table.string('password').notNullable();
-        table.bolean("isAdmin").defaultTo("false");
+        table.boolean("isAdmin").defaultTo("false");
 
         table.timestamp('created_at').defaultTo(knex.fn.now());
         table.timestamp('updated_at').defaultTo(knex.fn.now());
