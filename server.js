@@ -1,5 +1,6 @@
 const migrationRun = require('./src/database/mysql/migrations')
 require('dotenv/config')
+
 const cors = require('cors')
 const express = require('express')
 const routes = require('./src/routes')
