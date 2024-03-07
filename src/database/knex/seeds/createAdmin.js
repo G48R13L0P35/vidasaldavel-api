@@ -2,7 +2,7 @@ require('dotenv/config')
 
 exports.seed = async (knex) => {
 
-  await knex('user').insert(
+  await knex('users').insert(
     {
       name: process.env.USER_ADMIN,
       email: process.env.ADMIN_EMAIL,
