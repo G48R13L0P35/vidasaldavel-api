@@ -7,7 +7,7 @@ const userRouter = Router()
 const postController = new PostController()
 
 userRouter.post('/', postController.create)
-userRouter.get('/:user_id', checkIsAdmin, postController.listPosts)
+userRouter.get('/:users_id', checkIsAdmin, postController.listPosts)
 userRouter.delete('/:id', postController.deletePost)
 userRouter.put('/:id', postController.updatePost)
 

@@ -4,7 +4,7 @@ const createTables = require('./createTables')
 
 async function migrationRun() {
     const schema = [createTables].join('')
-    const tableName = `user`;
+    const tableName = `users`;
 
     const verifyIfTableExists = `
     SHOW TABLES LIKE '${tableName}';

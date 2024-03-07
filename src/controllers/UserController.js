@@ -10,7 +10,7 @@ class UserContoller {
 
         const hashedPassword = await bcrypt.hash(password, 8);
 
-        await knex('user').insert({
+        await knex('users').insert({
             name,
             email,
             password: hashedPassword,
@@ -32,13 +32,13 @@ class UserContoller {
     } */
 
     async listUsers (req, res) {
-        const users = await knex('user');
+        const users = await knex('users');
         return res.status(200).json(users);
     }
 
     async deleteUser(req, res) {
         const { id } = req.params;
-        await knex('user').where({id}).delete();
+        await knex('users').where({id}).delete();
         return res.status(200).json('Usuário deletado com sucesso');
     }
 
@@ -49,14 +49,14 @@ class UserContoller {
         if (password) {
             const hashedPassword = await bcrypt.hash(password, 8);
 
-            await knex('user').where({id}).update({
+            await knex('users').where({id}).update({
                 name,
                 email,  
                 password: hashedPassword
             })
             return res.status(200).json(hashedPassword);
         } else {
-            await knex('user').where({id}).update({
+            await knex('users').where({id}).update({
                 name,
                 email,
                 password
