@@ -4,9 +4,7 @@ exports.up = function(knex) {
         table.string('name').notNullable();
         table.string('email').notNullable();
         table.string('text');
-        table.timestamp('created_at').defaultTo(knex.fn.now());
-        
-        
+        table.timestamp('created_at').defaultTo(knex.fn.now());        
     })
 };
 
